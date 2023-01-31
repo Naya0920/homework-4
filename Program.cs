@@ -36,12 +36,13 @@ int SumNum(int n)
    return result;
   }
 
-Console.Write("Enter numbser n: ");
+Console.Write("Enter numbser: ");
 int n = Convert.ToInt32(Console.ReadLine());
 int sumNum = SumNum(n);
 Console.WriteLine("The sum of the digits in a number: " + sumNum);
 */
 // #3
+/*
 int [] CreateRandomArray(int size, int newNumber, int newNumbers)
 {
   int[] array = new int[size];
@@ -52,9 +53,9 @@ int [] CreateRandomArray(int size, int newNumber, int newNumbers)
     Console.Write("Enter new nimbers = ");
     int NewNumbers = Convert.ToInt32(Console.ReadLine());
 
-    while (newNumber[i] != ',' && i < size)
+    while (array[i] != ',' && i < size)
     {
-      newNumbers += newNumber[i];
+      newNumbers += array[i];
        i++;
     }
     array[a] = Convert.ToInt32(newNumbers);
@@ -75,16 +76,49 @@ void ShowArray(int[] array)
     Console.WriteLine();
 }
 
+Console.Write("Enter size = ");
+int size = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter newNumber = ");
+int newNumber = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter newNumbers = ");
+int newNumbers = Convert.ToInt32(Console.ReadLine());
+int[] newArray = CreateRandomArray(size,newNumber,newNumbers);
+ShowArray(newArray);
+
+Console.Write("Введите ряд чисел, разделенных запятой : ");
+int Numbers = Convert.ToInt32(Console.ReadLine());
+Console.Write("Numbers + ","");
+*/
+/*
 Console.Write("Enter lenght = ");
 int lenght = Convert.ToInt32(Console.ReadLine());
 Console.Write("Enter min = ");
 int min = Convert.ToInt32(Console.ReadLine());
 Console.Write("Enter max = ");
 int max = Convert.ToInt32(Console.ReadLine());
+*/
+Console.Write("Enter size = ");
+int size = Convert.ToInt32(Console.ReadLine());
+int [] numbers = new int[size];
+Console.Write(" ");
 
-int[] newArray = CreateRandomArray(lenght, min, max);
-ShowArray(newArray);
+for (int i = 0; i < numbers.Length; i++)
+ {
+    numbers [i] = new Random().Next(0, 11);
+    Console.Write(" " + Method (i) + " ");
+ }
+Console.Write(" ");
 
-Console.Write("Введите ряд чисел, разделенных запятой : ");
-int Numbers = Convert.ToInt32(Console.ReadLine());
-Console.Write("Numbers + ","");
+int Method (int a)
+{
+    return numbers[a];
+}
+void ShowArray(int[] array)
+{
+  for(int i = 0; i< array.Length; i++)
+    Console.Write(array[i] + " ");
+
+    Console.WriteLine();
+}
+
+ShowArray(numbers); 
